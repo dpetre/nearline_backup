@@ -1,0 +1,19 @@
+---
+file_backup:
+  sources:
+    -
+      type: 'remote'
+      server: '192.168.1.5'
+      remote_user: 'backup'
+      directory: '/test_dir'
+      backup_dir: 'test_dir'
+    - directory: '/local_dir'
+      backup_dir: 'local'
+  backup_destination_dir: '/backup_root'
+  archive: True
+nearline:
+  sync: True
+  bucket: 'gs-bucket'
+  directory: 'backups'
+  sync_dirs:
+    - /backup_root
